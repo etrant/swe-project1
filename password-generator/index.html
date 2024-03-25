@@ -6,42 +6,58 @@
     <link rel="stylesheet" href="styles/main.css" />
   </head>
   <body onload="generate()">
-    <div
-      id="main"
-      style="
-        height: 32px;
-        width: 30%;
-        border: 1px black solid;
-        margin-bottom: 10px;
-      "
-    ></div>
-        <button onclick="generate()">Generate Password</button>
-    <button onclick="clearHistory()">Clear History</button>
-    <form id="passwordGeneratorForm">
-        <div class="form-group">
-            <label for="passwordSize">Password Size:</label>
-            <input type="range" id="passwordSize" name="passwordSize" min="4" max="32" value="16" oninput="sizeValue.value = passwordSize.value">
-            <output name="sizeValue" for="passwordSize">16</output> characters
-        </div>
-        <fieldset class="form-group">
-            <legend>Include Characters:</legend>
-            <label>
+
+    <div class="content-wrapper">
+      <div id="main">
+        <div id="passwordDisplay">YourPasswordHere</div>
+        <button id="copyButton">Copy</button>
+        <button id="regenerateButton">Regenerate</button>
+      </div>
+
+      <div class="boxes-wrapper">
+
+        <div id="passwordGeneratorContainer">
+          <div id="formTitle">Customizations</div>
+
+          <form id="passwordGeneratorForm">
+
+            <div class="form-group">
+                <label for="passwordSize">Password Size:</label>
+                <input type="range" id="passwordSize" name="passwordSize" min="4" max="32" value="16" oninput="sizeValue.value = passwordSize.value">
+                <output name="sizeValue" for="passwordSize">16</output> characters
+            </div>
+
+            <fieldset class="form-group">
+              <legend>Include Characters:</legend>
+              <label>
                 <input type="checkbox" name="charOptions" value="lower"> Lowercase Letters
-            </label>
-            <label>
+              </label>
+              <label>
                 <input type="checkbox" name="charOptions" value="upper" checked> Uppercase Letters
-            </label>
-            <label>
+              </label>
+              <label>
                 <input type="checkbox" name="charOptions" value="numbers" checked> Numbers
-            </label>
-            <label>
+              </label>
+              <label>
                 <input type="checkbox" name="charOptions" value="symbols"> Symbols
-            </label>
-        </fieldset>
+              </label>
+            </fieldset>
+
+          </form>
         </div>
-    </form>
-    <h2>Password History</h2>
-    <div id="history"></div>
+        <div id="passwordHistoryContainer">
+          <div id="historyTitle">Password History</div>
+          <div id="history" class="password-history">
+
+          </div>
+        </div>
+      </div>
+      <button onclick="generate()">Generate Password</button>
+      <button onclick="clearHistory()">Clear History</button>
+      
+      
+      <div id="history"></div>
+    </div>
     <script src="scripts/generator.js"></script>
     <script src="scripts/helpers.js"></script>
   </body>
