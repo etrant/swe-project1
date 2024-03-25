@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles/main.css" />
+  </head>
+  <body onload="generate()">
+    <div
+      id="main"
+      style="
+        height: 32px;
+        width: 30%;
+        border: 1px black solid;
+        margin-bottom: 10px;
+      "
+    ></div>
+        <button onclick="generate()">Generate Password</button>
+    <button onclick="clearHistory()">Clear History</button>
+    <form id="passwordGeneratorForm">
+        <div class="form-group">
+            <label for="passwordSize">Password Size:</label>
+            <input type="range" id="passwordSize" name="passwordSize" min="4" max="32" value="16" oninput="sizeValue.value = passwordSize.value">
+            <output name="sizeValue" for="passwordSize">16</output> characters
+        </div>
+        <fieldset class="form-group">
+            <legend>Include Characters:</legend>
+            <label>
+                <input type="checkbox" name="charOptions" value="lower"> Lowercase Letters
+            </label>
+            <label>
+                <input type="checkbox" name="charOptions" value="upper" checked> Uppercase Letters
+            </label>
+            <label>
+                <input type="checkbox" name="charOptions" value="numbers" checked> Numbers
+            </label>
+            <label>
+                <input type="checkbox" name="charOptions" value="symbols"> Symbols
+            </label>
+        </fieldset>
+        </div>
+    </form>
+    <h2>Password History</h2>
+    <div id="history"></div>
+    <script src="scripts/generator.js"></script>
+    <script src="scripts/helpers.js"></script>
+  </body>
+</html>
