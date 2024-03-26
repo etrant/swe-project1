@@ -35,7 +35,9 @@ function createPassword(configuration) {
         
         password += configuration.charset.charAt(Math.floor(Math.random() * configuration.charsetSize));
     }
-    addToPasswordHistory(password);
+    if (password.length >= 4){
+        addToPasswordHistory(password);
+    }
     return password;
 }
 
