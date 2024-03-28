@@ -7,7 +7,7 @@
   box-sizing: border-box;
 }
 
-/* Reset margin and padding to remove browser defaults */
+/*reset margin and padding to remove browser defaults */
 * {
   margin: 0;
   padding: 0;
@@ -17,8 +17,8 @@
 body, html {
   height: 100%;
   margin: 0;
-  font-family: Arial, sans-serif; /* Choose a font that matches your design */
-  background-color: #22223B; /* Your specific background color */
+  font-family: Arial, sans-serif; 
+  background-color: #22223B; 
 }
 
 .content-wrapper {
@@ -32,29 +32,29 @@ body, html {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  gap: 20px; /* Space between the two boxes */
+  gap: 20px; /*space between the two boxes*/
   width: 90vw;
-  max-width: 1302px; /* Matches #main to ensure alignment */
+  max-width: 1302px; /*matches #main to ensure alignment*/
   margin-top: 40px;
 }
 
 #main {
   width: 90vw;
   max-width: 1302px;
-  height: auto; /* Adjust height as needed */
-  margin: 20px auto; /* Add margin to ensure spacing around the box */
+  height: auto; 
+  margin: 20px auto; 
   border: 1px solid rgb(160, 137, 159);
   background-color: #9A8698;
   color: #F2E9E4;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px; /* Adjust padding to ensure content is not too cramped */
+  padding: 20px; 
 }
 
-/* Customizations Container */
+/*customizations container*/
 #passwordGeneratorContainer {
-  position: relative; /*Use relative to keep it in the document flow */
+  position: relative; /*use relative to keep it in the document flow */
   width: 45vw;
   max-width: 660px;
   padding-top: 30px;
@@ -63,9 +63,9 @@ body, html {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Password History Container - mirroring the style of the customizations container */
+/*password history container*/
 #passwordHistoryContainer {
-  position: relative; /*Use relative to keep it in the document flow */
+  position: relative; 
   width: 45vw;
   max-width: 660px;
   padding-top: 30px;
@@ -102,28 +102,32 @@ body, html {
   margin-bottom: 15px;
 }
 
-/* Styling for the display area, history area, and buttons */
+/*styling for the display area, history area, and buttons*/
 #passwordDisplay {
-  flex-grow: 1; /* Allows the areas to grow and fill available space */
-  text-align: left; /* Aligns the text to the left */
-  margin-right: 20px; /* Adds some space on the right */
+  flex-grow: 1; /*allows the areas to grow and fill available space */
+  text-align: left; /*aligns the text to the left */
+  margin-right: 20px; /*adds some space on the right */
 }
 
-button {
-  margin-left: 10px; /* Adds space between buttons */
-  cursor: pointer;
-  padding: 10px 20px;
-  border: none;
-  background-color: #007BFF; /* Blue background */
-  color: white;
-  border-radius: 5px;
+
+#clearHistoryButton {
+  position: absolute; 
+  bottom: 10px; 
+  right: 10px; 
+  background-image: url('../img/Bin2.png'); 
+  background-size: cover; 
+  background-color: transparent; 
+  width: 70px; 
+  height: 70px;
+  border: none; 
+  cursor: pointer; 
 }
 
 button:hover {
   opacity: 0.8;
 }
 
-/* Additional styling for input elements as needed */
+/*styling for input elements */
 input[type=range], input[type=checkbox] {
   margin-right: 10px;
 }
