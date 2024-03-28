@@ -17,9 +17,9 @@ function generate() {
     let config = createConfiguration(selected, passwordSize);
 
     // Find the div with the id "main"
-    const box = document.getElementById("main");
+    const passwordContainer = document.getElementById("passwordContainer");
     // Overwrite it's text with the value of the generated password
-    box.innerHTML = createPassword(config);
+    passwordContainer.innerHTML = createPassword(config);
 
     // Find the div with the id "history" and clear it (prevents duplicates)
     const history = document.getElementById("history");

@@ -16,3 +16,8 @@ function resetToDefaultSettings() {
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById("resetToDefaultsButton").addEventListener("click", resetToDefaultSettings);
 });
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById("regenerateButton").addEventListener("click", function() {
+        generate(); // Call the generate function when the regenerate button is clicked
+    });
+});
