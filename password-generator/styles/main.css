@@ -57,7 +57,7 @@ body, html {
   position: relative; /*use relative to keep it in the document flow */
   width: 45vw;
   max-width: 660px;
-  padding-top: 30px;
+  padding-top: 5px;
   background-color: #9A8698;
   border-radius: 0 0 10px 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -74,6 +74,7 @@ body, html {
   border-radius: 0 0 10px 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   text-align: center;
+  padding-bottom: 30px;
 }
 
 #formTitle, #historyTitle {
@@ -99,8 +100,9 @@ body, html {
 }
 
 .form-group {
-  margin-bottom: 15px;
+  margin-bottom: 30px;
 }
+
 
 /*styling for the display area, history area, and buttons*/
 #passwordDisplay {
@@ -121,6 +123,22 @@ body, html {
   border: none;
   cursor: pointer;
 }
+#copyButton {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  width: 70px; /* Match the regenerate button */
+  height: 70px; /* Match the regenerate button */
+  background-image: url('../img/Copy2.png'); /* Your copy icon */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.button-group {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* Adjust the gap as needed */
+}
 
 #clearHistoryButton {
   position: absolute; 
@@ -135,11 +153,104 @@ body, html {
   cursor: pointer; 
 }
 
+#resetToDefaultsButton {
+  position: absolute; /* Adjust positioning to absolute */
+  bottom: 10px; /* Position at the bottom */
+  right: 10px; /* Position to the right */
+  background-image: url('../img/reset.png'); /* Apply the background image */
+  background-size: cover; /* Cover the entire area of the button */
+  border: none; /* Remove any default border */
+  background-color: transparent; /* Make the text transparent so only the image is visible */
+  width: 70px; /* Specify a width */
+  height: 70px; /* Specify a height */
+}
+
+
 button:hover {
   opacity: 0.8;
 }
 
-/*styling for input elements */
-input[type=range], input[type=checkbox] {
+/* Adjusting the slider directly */
+input[type=range] {
+  -webkit-appearance: none;  /* Override default Chrome & Safari appearance */
+  appearance: none;          /* Override default Firefox appearance */
+  margin: 10px 0;            /* Increase space around the slider */
+  width: calc(100% - 70px);  /* Adjust width to fit container with padding */
+  height: 15px;              /* Make the slider track taller */
+  background: #F2E9E4;          /* Light grey background */
+  cursor: pointer;           /* Cursor changes to pointer when hovered */
+  border-radius: 25px;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;               /* Make the thumb wider */
+  height: 22px;              /* Make the thumb taller */
+  background: #4A4E69;       /* Green background for the thumb */
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+input[type=range]::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #4A4E69;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+input[type=range]::-moz-range-track {
+  background: #F2E9E4;
+  height: 20px;
+  border-radius: 25px;
+}
+
+#characterCountBox {
+  display: inline-block; /* Allows the box to sit nicely next to the slider */
+  padding: 5px 15px; /* Adds some space inside the box */
+  margin-left: 10px; /* Adds some space between the slider and the box */
+  background-color: #F2E9E4; /* A contrasting background color */
+  color: #22223B; /* Text color that stands out against the box background */
+  border-radius: 5px; /* Optional: rounds the corners of the box */
+  font-weight: bold; /* Makes the number bold */
+}
+
+/* Place each checkbox on its own line and increase size */
+.form-group label {
+  display: flex;
+  align-items: center; /* This centers the label's text vertically with the checkbox */
+  margin-bottom: 10px;
+}
+
+input[type='checkbox'] {
+  -webkit-appearance: none; /* Removes default styling */
+  appearance: none;
+  background-color: #D9D9D9; /* Background color */
+  margin: 0;
+  width: 25px; /* Width, adjust to match the thumb slider */
+  height: 25px; /* Height, adjust to match the thumb slider */
+  border: 5px solid #22223B; /* Border color */
+  cursor: pointer;
+  border-radius: 8px;
   margin-right: 10px;
+}
+/* Style adjustments for fieldset to remove borders and adjust padding */
+fieldset.form-group {
+  border: none; /* Removes the default border */
+  padding: 0; /* Adjusts padding inside the fieldset, if necessary */
+  margin: 0; /* Removes default margin */
+}
+
+/* Style adjustments for legend for a better look */
+legend {
+    color: #22223B; /* Changes the text color to match your design */
+    padding: 0; /* Adjusts padding around the legend text */
+    margin-bottom: 10px; /* Adds some space below the legend text */
+}
+
+
+/* Increase clickable area */
+input[type='checkbox'] + label {
+  cursor: pointer;
 }

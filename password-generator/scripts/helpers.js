@@ -1,4 +1,4 @@
- function clearHistory() {
+function clearHistory() {
         sessionStorage.clear();
         const history = document.getElementById("history");
         history.innerHTML = "";

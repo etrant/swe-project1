@@ -10,23 +10,27 @@
     <div class="content-wrapper">
       <div id="main">
         <div id="passwordContainer">YourPasswordHere</div>
-        <button id="copyButton">Copy</button>
-        <button id="regenerateButton" onclick="generate()"></button>
+        <div class="button-group">
+          <button id="copyButton"></button>
+          <button id="regenerateButton"></button>
+            
+        </div>
+        
       </div>
 
       <div class="boxes-wrapper">
 
         <div id="passwordGeneratorContainer">
           <div id="formTitle">Customizations</div>
-          <button id="resetToDefaultsButton">Reset to Default Settings</button>
+          <button id="resetToDefaultsButton"></button>
 
 
           <form id="passwordGeneratorForm">
 
             <div class="form-group">
-                <label for="passwordSize">Password Size:</label>
-                <input type="range" id="passwordSize" name="passwordSize" min="4" max="32" value="16" oninput="sizeValue.value = passwordSize.value">
-                <output name="sizeValue" for="passwordSize">16</output> characters
+                <label for="passwordSize"></label>
+                <input type="range" id="passwordSize" name="passwordSize" min="4" max="32" value="16" oninput="document.getElementById('characterCountBox').textContent = passwordSize.value">
+                <div id="characterCountBox" name="sizeValue" for="passwordSize">16</div>
             </div>
 
             <fieldset class="form-group">
@@ -53,7 +57,7 @@
           <button id="clearHistoryButton" onclick="clearHistory()"></button>
         </div>
       </div>
-      <button onclick="generate()">Generate Password</button>
+      
       <div id="history"></div>
     </div>
     <script src="scripts/generator.js"></script>
