@@ -17,8 +17,15 @@
 body, html {
   height: 100%;
   margin: 0;
-  font-family: Arial, sans-serif; 
+  font-family: Noto Sans, sans-serif; 
   background-color: #22223B; 
+}
+
+.section-title{
+  font-weight: bold;
+  letter-spacing: 0.3em;
+  font-size: 20px;
+
 }
 
 .content-wrapper {
@@ -88,6 +95,13 @@ body, html {
   text-align: center;
   line-height: 30px;
   border-radius: 10px 10px 0 0;
+}
+#history {
+  max-height: 300px; /* This limits the height of the password list */
+  overflow-y: auto; /* This adds a vertical scrollbar to the password list */
+  margin: 0; /* Adjust spacing as needed */
+  padding: 0; /* Adjust padding as needed */
+  border-radius: 5px; /* Optional: Adds rounded corners to the scrollable area */
 }
 
 #passwordGeneratorForm {

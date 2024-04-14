@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles/main.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
   </head>
   <body onload="generate()">
 
@@ -21,7 +22,7 @@
       <div class="boxes-wrapper">
 
         <div id="passwordGeneratorContainer">
-          <div id="formTitle">Customizations</div>
+          <div id="formTitle" class="section-title">Customizations</div>
           <button id="resetToDefaultsButton"></button>
 
 
@@ -51,8 +52,9 @@
 
           </form>
         </div>
+
         <div id="passwordHistoryContainer">
-          <div id="historyTitle">Password History</div>
+          <div id="historyTitle" class="section-title">Password History</div>
           <div id="history" class="password-history"></div>
           <button id="clearHistoryButton" onclick="clearHistory()"></button>
         </div>

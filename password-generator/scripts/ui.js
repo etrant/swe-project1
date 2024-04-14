@@ -25,6 +25,7 @@ function resetToDefaultSettings() {
 
 //event listener for the reset button
 document.addEventListener('DOMContentLoaded', function() {
+    resetToDefaultSettings();
     document.getElementById("resetToDefaultsButton").addEventListener("click", resetToDefaultSettings);
 
     document.getElementById("regenerateButton").addEventListener("click", function(event) {
